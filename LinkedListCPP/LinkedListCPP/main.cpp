@@ -37,13 +37,17 @@ template <class T>
 class LinkedList {
 public:
  bool cycle;
- LinkedListNode<T> head;
+ LinkedListNode<T>* head = nullptr;
+ LinkedList() {
+  cout << "Object is being created" << endl;
+ }
 
  bool isEmpty(){
-  return head == nullptr;
+  return head == 0;
  };
 };
 
+// Member functions definitions including constructor
 
 
 int main(int argc, const char * argv[]) {
@@ -51,6 +55,16 @@ int main(int argc, const char * argv[]) {
  LinkedListNode<string> node;
  node.value = "YO";
  node.hello();
+
+ LinkedList<string> list;
+
+ if (list.isEmpty()) {
+  cout << "Empty list" << "\n";
+ }else{
+   cout << "List is not empty" << "\n";
+ }
+
+
 
  return 0;
 
